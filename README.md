@@ -1,5 +1,5 @@
 # REAL-TIME CHAT APPLICATION
-- Implemented with kafka and Websocket
+- Implemented with Kafka and Websocket
 
 ## ABOUT
 - Allows real-time chat with support of websocket.
