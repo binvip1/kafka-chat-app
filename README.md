@@ -3,7 +3,7 @@
 
 ## ABOUT
 - Allows real-time chat with support of websocket.
-- Uses Kafka as message brokers.
+- Uses Kafka as message brokers for fault-tolerant and the ease of scaling.
 - Frontend: chat-frontend.
 - Backend: distributed-chat-app.
 
