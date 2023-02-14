@@ -5,11 +5,6 @@ const api = Axios.create({
 });
 
 export const chatAPI = {
-    getMessage: (groupID) => {
-        console.log('Calling get messages from API');
-        return api.get(`messages/${groupID}`);
-    },
-
     sendMessage: (username, text) => {
         let msg = {
             sender: username,

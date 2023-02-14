@@ -5,13 +5,17 @@ import { LoginForm } from './components/LoginForm/LoginForm';
 import { Input } from './components/Input/Input';
 import { chatAPI } from './services/chatapi';
 import { Messages } from './components/Messages/Messages';
-import { randomColor } from './randomColor';
 
 const SOCKET_URL = 'http://localhost:8080/ws-chat';
 
 function App() {
   const [message, setMessage] = useState([]);
   const [user, setUser] = useState(null);
+
+  //set chat color
+  function randomColor() {
+    return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  }
 
   let onMessageReceived = (msg) => {
     console.log("New message received");
