@@ -2,7 +2,7 @@ import React from "react";
 
 export const Messages = ({ messages, currentUser }) => {
     let renderMessage = (message) => {
-        const { sender, content, color } = message;
+        const { sender, content, timestamp } = message;
         const messageFromMe = currentUser.username === message.sender;
         const className = messageFromMe ? "Messages-message currentUser" : "Message-message";
 
@@ -10,7 +10,7 @@ export const Messages = ({ messages, currentUser }) => {
             <li className={className}>
                 <span
                     className="avatar"
-                    style={{ backgroundColor: color}}
+                    style={{ backgroundColor: currentUser.color}}
                 />
                 <div className="Message-content">
                     <div className="username">
@@ -18,6 +18,9 @@ export const Messages = ({ messages, currentUser }) => {
                     </div>
                     <div className="text">
                         {content}
+                    </div>
+                    <div className="time">
+                        {timestamp}
                     </div>
                 </div>
             </li>

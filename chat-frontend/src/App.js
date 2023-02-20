@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import SockJsClient from 'react-stomp';
 import './App.css';
-import { LoginForm } from './components/LoginForm/LoginForm';
-import { Input } from './components/Input/Input';
-import { chatAPI } from './services/chatapi';
-import { Messages } from './components/Messages/Messages';
+import { LoginForm } from './components/LoginForm';
+import { Input } from './components/Input';
+import { chatAPI } from './components/chatapi';
+import { Messages } from './components/Messages';
 
 const SOCKET_URL = 'http://localhost:8080/ws-chat';
 

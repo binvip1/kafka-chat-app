@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ExecutionException;
 
 @RestController
@@ -23,7 +24,10 @@ public class ChatController {
 
     @PostMapping(value = "/api/send", consumes = "application/json", produces = "application/json")
     public void sendMessage(@RequestBody Message message) {
-        message.setTimestamp(LocalDateTime.now().toString());
+        LocalDateTime myDateObj = LocalDateTime.now();
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+        message.setTimestamp(myDateObj.format(myFormatObj));
 
         try {
             kafkaTemplate.send(KAFKA_CHAT_TOPIC, message).get();
