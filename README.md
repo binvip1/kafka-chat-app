@@ -15,6 +15,6 @@
 - Change broker.id accordingly (0, 1, 2).
 - Start Zookeeper server in kafka directory.
 - Start 3 Kafka brokers point to 3 config files.
-- Create chat Kafka topic: set bootstrap server to 9092, replication factor 1 and partition 0.
+- Create chat Kafka topic: set bootstrap server to 9092, replication factor 3 and partition 1.
 - In the distributed-chat-app directory: mvn spring-boot:run
 - In the chat-frontend directory: npm start
